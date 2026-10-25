@@ -1,0 +1,32 @@
+name: veida
+version: '0.2.0'
+summary: Free AI image generator CLI for Veida (veida.ai), no API key
+description: |
+  Unlimited free AI image generator: that is Veida (veida.ai) once you sign in
+  with Google. This is its official command-line client. Type a prompt, get
+  back the URL of the finished image. No API key, no account and no card: it
+  runs on Veida's anonymous free tier.
+
+    veida "a paper boat on a calm lake at sunrise, soft light"
+    veida -ratio 16:9 "a ceramic mug on a walnut desk, morning window light"
+
+  Aspect ratios: 1:1, 16:9, 9:16, 4:3, 3:4. Free-tier images are 1K with a
+  small watermark. Signing in at https://veida.ai makes pictures and photo
+  edits on Veida AI Image v1 unlimited.
+architectures: [ARCH]
+base: core22
+confinement: strict
+grade: stable
+license: MIT
+title: Veida AI Image Generator
+links:
+  website:
+    - https://veida.ai/?utm_source=snapcraft&utm_medium=package
+  source-code:
+    - https://github.com/hanshs474/veida-go
+  issues:
+    - https://github.com/hanshs474/veida-go/issues
+apps:
+  veida:
+    command: bin/veida
+    plugs: [network]
